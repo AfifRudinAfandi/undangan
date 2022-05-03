@@ -137,10 +137,6 @@
     margin-bottom: 24px;
   }
 
-  .date .date-reception:nth-last-of-type(1) {
-    margin-bottom: 64px;
-  }
-
   .closing {
     padding-top: 36px;
     padding-bottom: 0px;
@@ -523,10 +519,6 @@
     margin-bottom: 24px;
   }
 
-  .date .date-reception:nth-last-of-type(1) {
-    margin-bottom: 64px;
-  }
-
   .closing {
     padding-top: 36px;
     padding-bottom: 0px;
@@ -772,9 +764,19 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 991.98px) {}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  p.opening2 {
+    padding-left: 25%;
+    padding-right: 25%;
+  }
+}
 
 @media (min-width: 1400px) and (max-width: 1904px) {
+  p.opening2 {
+    padding-left: 25%;
+    padding-right: 25%;
+  }
+
   .wrapper-moments-img>* {
     height: 352px;
   }
