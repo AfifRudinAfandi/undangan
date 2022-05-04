@@ -100,11 +100,28 @@
         <p class="closing-3">Wassalamu’alaikum warahmatullahi wabarakatuh</p>
       </div>
     </section>
-    <section>
+    <section class="gift">
       <div class="container">
         <div class="wedding-gift">
           <h5>Wedding Gift</h5>
-          <p>Bagi Keluarga dan Sahabat yang ingin mengirimkan hadiah, silahkan mengirimkannya melalui :</p>
+          <p class="mb-4">Bagi Keluarga dan Sahabat yang ingin mengirimkan hadiah, silahkan mengirimkannya melalui :</p>
+          <div class="card mb-2">
+            <div class="card-body card-gift">
+              <img src="static/images/logo-mandiri.svg" alt="">
+              <p id="text_element" class="rx">1780002956098</p>
+              <p>an. Muchammad Afif Rudin</p>
+              <div class="wp-center">
+                <button class="btn-copy" onclick="copyToClipboard('text_element')">Salin No.Rek</button>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body card-gift">
+              <p class="mb-4">Bagi yang ingin memberikan hadiah, silahkan dikirim ke alamat berikut :</p>
+              <p>Penerima : Muchammad Afif Rudin Afandi</p>
+              <p>Kebonsari RT/RW 04/01, Sukodadi, Lamongan</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -273,6 +290,32 @@ $(window).scroll(function() {
 				}
 		});
     }).scroll();
+
+    function copyToClipboard(elementId) {
+
+      // Create an auxiliary hidden input
+      var aux = document.createElement("input");
+
+      // Get the text from the element passed into the input
+      aux.setAttribute("value", document.getElementById(elementId).innerHTML);
+
+      // Append the aux input to the body
+      document.body.appendChild(aux);
+
+      // Highlight the content
+      aux.select();
+
+      // Execute the copy command
+      document.execCommand("copy");
+
+      // Remove the input from the body
+      document.body.removeChild(aux);
+
+      }
+
+      function log(){
+      console.log('---')
+      }
     </script>
   </body>
 </html>
