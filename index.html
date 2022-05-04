@@ -45,11 +45,11 @@
           <p class="opening2">Allah SWT menciptakan manusia berpasang-pasangan. Dengan memohon rahmat dan ridho-Nya, kami berdua bermaksud menyelenggarakan pernikahan kami.</p>
 
           <p class="nama">Muchammad Afif Rudin Afandi</p>
-          <p class="anak">Putra Bungsu dari Bpk.Muslan</p>
+          <p class="anak">Putra Bungsu dari Bpk.Muslan & Ibu Siti Fatimah</p>
           <br>
           
           <p class="nama">Ella Rahmadani Permono Putri</p>
-          <p class="anak">Putri Bungsu dari Bpk.Gendut Supramono</p>
+          <p class="anak">Putri Bungsu dari Bpk.Gendut Supramono & Almh. Ibu Kusniati</p>
         </div>
       </div>
     </section>
@@ -71,7 +71,7 @@
         <div class="row">
           <div class="col-md-7">
             <div class="maps-img">
-              <iframe width="100%" height="350px" id="gmap_canvas" src="https://maps.google.com/maps?q=divisi%20studio&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+              <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=divisi%20studio&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
             </div>
             <a class="btn direction mobile" href="https://www.google.com/maps/place/Divisi+Studio/@-7.093184,112.3101809,21z/data=!4m5!3m4!1s0x0:0xf2333870a0528bbe!8m2!3d-7.0930346!4d112.3101921">Arahkan saya</a>
           </div>
@@ -105,21 +105,27 @@
         <div class="wedding-gift">
           <h5>Wedding Gift</h5>
           <p class="mb-4">Bagi Keluarga dan Sahabat yang ingin mengirimkan hadiah, silahkan mengirimkannya melalui :</p>
-          <div class="card mb-2">
-            <div class="card-body card-gift">
-              <img src="static/images/logo-mandiri.svg" alt="">
-              <p id="text_element" class="rx">1780002956098</p>
-              <p>an. Muchammad Afif Rudin</p>
-              <div class="wp-center">
-                <button class="btn-copy" onclick="copyToClipboard('text_element')">Salin No.Rek</button>
+          <div class="row">
+            <div class="col-md-6 mb-2">
+              <div class="card">
+                <div class="card-body card-gift">
+                  <img src="static/images/logo-mandiri.svg" alt="">
+                  <p id="copy" class="rx">1780002956098</p>
+                  <p>an. Muchammad Afif Rudin</p>
+                  <div class="wp-center">
+                    <button class="btn-copy" id="copy-button" onclick="copyText('copy');">Salin No.Rek</button>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="card">
-            <div class="card-body card-gift">
-              <p class="mb-4">Bagi yang ingin memberikan hadiah, silahkan dikirim ke alamat berikut :</p>
-              <p>Penerima : Muchammad Afif Rudin Afandi</p>
-              <p>Kebonsari RT/RW 04/01, Sukodadi, Lamongan</p>
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-body card-gift">
+                  <p class="mb-4">Bagi yang ingin memberikan hadiah, silahkan dikirim ke alamat berikut :</p>
+                  <p>Penerima : Muchammad Afif Rudin Afandi</p>
+                  <p>Kebonsari RT/RW 04/01, Sukodadi, Lamongan</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -291,31 +297,20 @@ $(window).scroll(function() {
 		});
     }).scroll();
 
-    function copyToClipboard(elementId) {
-
-      // Create an auxiliary hidden input
-      var aux = document.createElement("input");
-
-      // Get the text from the element passed into the input
-      aux.setAttribute("value", document.getElementById(elementId).innerHTML);
-
-      // Append the aux input to the body
-      document.body.appendChild(aux);
-
-      // Highlight the content
-      aux.select();
-
-      // Execute the copy command
-      document.execCommand("copy");
-
-      // Remove the input from the body
-      document.body.removeChild(aux);
-
-      }
-
-      function log(){
-      console.log('---')
-      }
+    function copyText(element) {
+      var $copyText = document.getElementById(element).innerText;
+      var button = document.getElementById(element + '-button');
+      navigator.clipboard.writeText($copyText).then(function() {
+        var originalText = button.innerText;
+        button.innerText = 'Berhasil Disalin';
+        setTimeout(function(){
+          button.innerText = originalText;
+          }, 750);
+      }, function() {
+        button.style.cssText = "background-color: var(--red);";
+        button.innerText = 'Error';
+      });
+    }
     </script>
   </body>
 </html>

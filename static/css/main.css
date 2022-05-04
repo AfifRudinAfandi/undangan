@@ -436,30 +436,29 @@
   line-height: 29px;
   text-align: center;
   text-transform: uppercase;
-  color: #ffffff;
-  padding: 10px 50px;
-  background-color: #000000;
-  border: none;
-  border-radius: 0;
+  color: #000000;
+  padding: 8px 38px;
+  border: 1px solid #000000;
+  background-color: transparent;
+  border-radius: 4px;
 }
 
 .form p {
-  font-family: "ivypresto-display", serif;
+  font-family: "Roboto", sans-serif;
   font-weight: bold;
-  font-size: 60px;
+  font-size: 48px;
   line-height: 70px;
   color: #000000;
-  margin-bottom: 62px;
 }
 
 .form input {
   max-width: 280px;
-  border-radius: 0;
+  border-radius: 4px;
 }
 
 .form textarea {
   width: 100%;
-  border-radius: 0;
+  border-radius: 4px;
 }
 
 .footer {
@@ -589,8 +588,10 @@
   align-items: center;
   width: 100%;
   padding: 0px 34px;
-  padding-top: 16vh;
-  padding-bottom: 16vh;
+  padding-top: 8vh;
+  padding-bottom: 8vh;
+  height: 100%;
+  justify-content: center;
 }
 
 .modal-body .wp-luar .wp-center {
@@ -732,10 +733,15 @@ button:focus {
   outline: none !important;
 }
 
+.gift .card {
+  height: 100%;
+}
+
 .card-gift {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .card-gift img {
@@ -745,11 +751,14 @@ button:focus {
 
 .card-gift p {
   text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
 }
 
 .card-gift p.rx {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
+  font-family: "Roboto", sans-serif;
 }
 
 .gift {
@@ -773,12 +782,23 @@ button:focus {
   background-color: #ffffff;
   color: #000000;
   border: 1px solid #000000;
-  border-radius: 14px;
+  border-radius: 8px;
   font-size: 14px;
   padding: 8px 18px;
 }
 
-.btn-copy:hover {
+.btn-copy:hover,
+.btn-copy:checked,
+.btn-copy:focus {
   background-color: #000000;
   color: #ffffff;
+}
+
+.gift .col-md-6 {
+  display: table-cell;
+}
+
+.maps-img iframe {
+  width: 100%;
+  height: 650px;
 }
