@@ -138,8 +138,8 @@
   }
 
   .closing {
-    padding-top: 36px;
-    padding-bottom: 0px;
+    padding-top: 64px;
+    padding-bottom: 105px;
   }
 
   .closing .closing-1 {
@@ -209,6 +209,10 @@
 
   .place .maps-img {
     margin-bottom: 36px;
+  }
+
+  .place .maps-img iframe {
+    height: 350px;
   }
 
   .place .col-md-6:nth-last-of-type(1) {
@@ -496,7 +500,7 @@
 
   .date {
     padding-top: 38px;
-    padding-bottom: 52px;
+    padding-bottom: 16px;
   }
 
   .date .date-reception {
